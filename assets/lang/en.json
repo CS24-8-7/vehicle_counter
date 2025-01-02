@@ -1,0 +1,18 @@
+{
+    "appTitle": "Vehicle Counter",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "addVehicleType": "Add New Vehicle",
+    "newVehicleTypeName": "New vehicle type name...",
+    "cancel": "Cancel",
+    "add": "Add",
+    "resetCounters": "Reset Counters",
+    "confirmReset": "Are you sure you want to reset all counters?",
+    "ok": "OK",
+    "vehicleTypeExists": "Vehicle type already exists or is empty",
+    "vehicleRemoved": "Vehicle type \"{vehicleType}\" has been removed",
+    "showResults": "Show Results",
+    "deleteVehicleType": "Delete Vehicle Type",
+    "confirmDelete": "Are you sure you want to delete this vehicle type?",
+    "no": "No"
+}

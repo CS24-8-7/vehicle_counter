@@ -1,0 +1,18 @@
+{
+    "appTitle": "عداد المركبات",
+    "home": "الرئيسية",
+    "aboutUs": "عنا",
+    "addVehicleType": "اضافة مركبة",
+    "newVehicleTypeName": "اسم نوع مركبة جديدة...",
+    "cancel": "الغاء",
+    "add": "اضافة",
+    "resetCounters": "مسح العد",
+    "confirmReset": "هل أنت متأكد أنك تريد مسح جميع العدادات؟",
+    "ok": "موافق",
+    "vehicleTypeExists": "نوع المركبة موجود بالفعل أو فارغ",
+    "vehicleRemoved": "تم إزالة نوع المركبة \"{vehicleType}\"",
+    "showResults": "إظهار النتائج",
+    "deleteVehicleType": "حذف المركبة",
+    "confirmDelete": "هل انت متأكد من حذف نوع المركبة؟",
+    "no": "لا"
+}

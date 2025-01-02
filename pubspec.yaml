@@ -1,0 +1,31 @@
+name: vehicle_counter
+description: A vehicle counting application with multilingual support.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.7
+  awesome_dialog: ^3.1.0
+  intl:
+  contactus: ^1.2.3
+  provider:
+  shared_preferences: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+dependency_overrides:
+  font_awesome_flutter: ^10.8.0
+flutter:
+  uses-material-design: true
+  generate: true
