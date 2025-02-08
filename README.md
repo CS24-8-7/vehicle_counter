@@ -1,62 +1,50 @@
-Vehicle Counter
+# Vehicle Counter
 
 A simple and user-friendly vehicle counter application built with Flutter. This app was developed specifically for the engineering faculty at Sana'a University to assist in counting vehicles and tracking their routes. It includes features such as theme customization, localization, and an intuitive UI/UX design.
 
-🚀 Features
+## 🚀 Features
 
-Built with Flutter: Ensuring cross-platform compatibility and a smooth user experience.
+- **Built with Flutter:** Ensuring cross-platform compatibility and a smooth user experience.
+- **Simple and Interactive Interface:** Designed for ease of use with accessibility in mind.
 
-Simple and Interactive Interface: Designed for ease of use with accessibility in mind.
+### 🚗 Vehicle Counting:
 
-🚗 Vehicle Counting:
+- Allows users to count vehicles manually or automatically.
+- Tracks different vehicle types.
+- Stores historical data for future reference.
 
-Allows users to count vehicles manually or automatically.
+### 🗺️ Route Tracking:
 
-Tracks different vehicle types.
+- Records vehicle movement along predefined routes.
+- Displays real-time data for better analysis.
 
-Stores historical data for future reference.
+### 🎨 User Interface:
 
-🗺️ Route Tracking:
+- Responsive design for different screen sizes.
+- Intuitive controls for a seamless experience.
+- Light and dark theme support.
 
-Records vehicle movement along predefined routes.
+### 🌍 Localization:
 
-Displays real-time data for better analysis.
+- Shared preferences used for language localization.
 
-🎨 User Interface:
+### 🔄 Data Persistence:
 
-Responsive design for different screen sizes.
+- Stores counted vehicles and routes using local storage.
+- Allows exporting data for reports.
 
-Intuitive controls for a seamless experience.
+### 🎨 UI/UX Focused Design:
 
-Light and dark theme support.
+- Enhances user engagement with clean and responsive design principles.
 
-🌍 Localization:
+## 🛠️ Technologies Used
 
-Shared preferences used for language localization.
+- **Flutter:** The main framework used to build this app.
+- **Provider:** For managing state efficiently.
+- **Shared Preferences:** For storing user settings and language preferences.
+- **Material Design:** For UI components.
+- **Dart:** The programming language used to develop the app.
 
-🔄 Data Persistence:
-
-Stores counted vehicles and routes using local storage.
-
-Allows exporting data for reports.
-
-🎨 UI/UX Focused Design:
-
-Enhances user engagement with clean and responsive design principles.
-
-🛠️ Technologies Used
-
-Flutter: The main framework used to build this app.
-
-Provider: For managing state efficiently.
-
-Shared Preferences: For storing user settings and language preferences.
-
-Material Design: For UI components.
-
-Dart: The programming language used to develop the app.
-
-🏁 Getting Started
+## 🏁 Getting Started
 
 This project is a learning-based Flutter application that follows clean architecture principles, using Provider for state management and focusing on a responsive UI.
-
