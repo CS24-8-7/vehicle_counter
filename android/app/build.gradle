@@ -22,7 +22,7 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 android {
-    namespace = "com.example.age_calclator"
+    namespace = "com.example.counters"
     compileSdk = 34
     ndkVersion = "25.1.8937393"
 
