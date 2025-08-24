@@ -1,12 +1,15 @@
-import 'package:vehicle_counter/imports_library.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class LocaleProvider extends ChangeNotifier {
+  static const _key = 'locale';
   Locale _locale = const Locale('en');
   final SharedPreferences _prefs;
 
   LocaleProvider(this._prefs) {
-    final savedLocale = _prefs.getString('locale');
-    if (savedLocale != null) {
-      _locale = Locale(savedLocale);
+    final saved = _prefs.getString(_key);
+    if (saved != null && ['en', 'ar'].contains(saved)) {
+      _locale = Locale(saved);
     }
   }
 
@@ -14,9 +17,8 @@ class LocaleProvider extends ChangeNotifier {
 
   void setLocale(Locale locale) {
     if (!['en', 'ar'].contains(locale.languageCode)) return;
-
     _locale = locale;
-    _prefs.setString('locale', locale.languageCode);
+    _prefs.setString(_key, locale.languageCode);
     notifyListeners();
   }
 

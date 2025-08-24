@@ -1,6 +1,6 @@
-import 'package:vehicle_counter/imports_library.dart';
+import 'package:flutter/material.dart';
+
 class AppTheme {
-  // Light Theme
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
@@ -12,7 +12,6 @@ class AppTheme {
     );
   }
 
-  // Dark Theme
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
@@ -24,78 +23,64 @@ class AppTheme {
     );
   }
 
-  // Light Color Scheme
   static const ColorScheme _lightColorScheme = ColorScheme(
-    primary: Colors.black,
-    secondary: Colors.black,
-    surface: Colors.white,
-    error: Colors.red,
-    onPrimary: Colors.white,
-    onSecondary: Colors.white,
-    onSurface: Colors.black,
-    onError: Colors.white,
     brightness: Brightness.light,
-  );
-
-  // Dark Color Scheme
-  static const ColorScheme _darkColorScheme = ColorScheme(
-    primary: Colors.white,
-    secondary: Colors.white,
-    surface: Colors.black,
+    primary: Colors.black,
+    onPrimary: Colors.white,
+    secondary: Colors.black,
+    onSecondary: Colors.white,
     error: Colors.red,
-    onPrimary: Colors.black,
-    onSecondary: Colors.black,
-    onSurface: Colors.white,
-    onError: Colors.black,
-    brightness: Brightness.dark,
+    onError: Colors.white,
+    surface: Colors.white,
+    onSurface: Colors.black,
   );
 
-  // Light AppBar Theme
+  static const ColorScheme _darkColorScheme = ColorScheme(
+    brightness: Brightness.dark,
+    primary: Colors.white,
+    onPrimary: Colors.black,
+    secondary: Colors.white,
+    onSecondary: Colors.black,
+    error: Colors.red,
+    onError: Colors.black,
+    surface: Colors.black,
+    onSurface: Colors.white,
+  );
+
   static const AppBarTheme _lightAppBarTheme = AppBarTheme(
     centerTitle: true,
     elevation: 0,
     backgroundColor: Colors.white,
-    iconTheme: IconThemeData(color: Colors.black), // Black icons for AppBar
+    iconTheme: IconThemeData(color: Colors.black),
   );
 
-  // Dark AppBar Theme
   static const AppBarTheme _darkAppBarTheme = AppBarTheme(
     centerTitle: true,
     elevation: 0,
     backgroundColor: Colors.black,
-    iconTheme: IconThemeData(color: Colors.white), // White icons for AppBar
+    iconTheme: IconThemeData(color: Colors.white),
   );
 
-  // Input Decoration Theme
   static InputDecorationTheme _inputDecorationTheme(Color borderColor) {
     return InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide(color: borderColor),
       ),
-      contentPadding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 12,
-      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
     );
   }
 
-  // Elevated Button Theme
   static ElevatedButtonThemeData _elevatedButtonTheme(
-      Color backgroundColor,
-      Color foregroundColor,
-      ) {
+    Color backgroundColor,
+    Color foregroundColor,
+  ) {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         foregroundColor: foregroundColor,
         backgroundColor: backgroundColor,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-          vertical: 12,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     );
   }

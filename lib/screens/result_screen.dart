@@ -1,17 +1,20 @@
-import 'package:vehicle_counter/imports_library.dart';
-
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../providers/vehicle_counter_provider.dart';
 
 class ResultsPage extends StatelessWidget {
   const ResultsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<VehicleCounterProvider>(context);
+    final provider = context.watch<VehicleCounterProvider>();
     final l10n = AppLocalizations.of(context)!;
+    final isRTL = Directionality.of(context) == TextDirection.rtl;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.appTitle), // Localization for "Vehicle Counter"
+        title: Text(l10n.appTitle),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -25,27 +28,29 @@ class ResultsPage extends StatelessWidget {
             child: ListTile(
               title: Text(
                 provider.vehicleLabels[vehicleType] ?? vehicleType,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              subtitle: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: directions.entries.map((directionEntry) {
-                  final direction = directionEntry.key;
-                  final count = directionEntry.value;
-                  final directionIcon = _getDirectionIcon(direction);
-                  final directionLabel = _getDirectionLabel(l10n, direction);
-
-                  return Row(
-                    children: [
-                      Icon(directionIcon, size: 16), // Add the direction icon
-                      const SizedBox(width: 8), // Space between icon and text
-                      Text(
-                        '$directionLabel: $count',
-                        style: const TextStyle(fontSize: 16),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: directions.entries.map((d) {
+                    final direction = d.key;
+                    final count = d.value;
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 2),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(_iconFor(direction, isRTL), size: 16),
+                          const SizedBox(width: 8),
+                          Text('${_labelFor(l10n, direction)}: $count'),
+                        ],
                       ),
-                    ],
-                  );
-                }).toList(),
+                    );
+                  }).toList(),
+                ),
               ),
             ),
           );
@@ -54,7 +59,22 @@ class ResultsPage extends StatelessWidget {
     );
   }
 
-  String _getDirectionLabel(AppLocalizations l10n, String direction) {
+  static IconData _iconFor(String direction, bool isRTL) {
+    switch (direction) {
+      case 'East':
+        return isRTL ? Icons.arrow_back : Icons.arrow_forward;
+      case 'West':
+        return isRTL ? Icons.arrow_forward : Icons.arrow_back;
+      case 'North':
+        return Icons.arrow_upward;
+      case 'South':
+        return Icons.arrow_downward;
+      default:
+        return Icons.help_outline;
+    }
+  }
+
+  static String _labelFor(AppLocalizations l10n, String direction) {
     switch (direction) {
       case 'East':
         return l10n.directionEast;
@@ -66,23 +86,6 @@ class ResultsPage extends StatelessWidget {
         return l10n.directionSouth;
       default:
         return direction;
-    }
-  }
-
-  IconData _getDirectionIcon(String direction) {
-    switch (direction) {
-      case 'East':
-        return Icons.arrow_back ;
-      case 'West':
-        return Icons.arrow_forward;
-      case 'North':
-        return Icons.arrow_upward;
-
-      case 'South':
-        return Icons.arrow_downward;
-
-      default:
-        return Icons.help;
     }
   }
 }

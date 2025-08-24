@@ -29,3 +29,8 @@ dependency_overrides:
 flutter:
   uses-material-design: true
   generate: true
+
+
+# تفعيل التوليد المدمج للترجمات
+flutter_intl:
+  enabled: false

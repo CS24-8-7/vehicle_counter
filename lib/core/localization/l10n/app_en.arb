@@ -28,7 +28,7 @@
     "ok": "OK",
     "no": "No",
     "delete": "Delete",
-    "emptyVehicleError":"pleas enter valid vehicle type",
+    "emptyVehicleError": "Please enter a valid vehicle type",
     "vehicle_car": "Car",
     "vehicle_truck": "Truck",
     "vehicle_bus": "Bus",
@@ -37,5 +37,4 @@
     "message_contact": "Call me on 717281413",
     "defaultTitle": "Default Title",
     "defaultMessage": "Default Message"
-
 }
